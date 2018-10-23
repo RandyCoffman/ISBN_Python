@@ -25,23 +25,17 @@ def validate_isbn13(number):
   number = [ int(x) for x in number ]
   check_digit = number.pop()
   new_arr = []
-  print(number)
   for index, value in enumerate(number):
     if index+1 % 2 == 0:
-      print(index)
       x = int(value) * 1
       new_arr.append(x)
     else:
       x = int(value) * 3
-      print(index)
       new_arr.append(x)
   index = index+1
   num = sum(new_arr)
-  print(num)
   final = num % 10
   final = 10 - final
-  print(final)
-  print(check_digit)
   while True:
     if final <= 9:
       final = final % 10
@@ -58,4 +52,4 @@ def isbn10_or_isbn13(number):
   elif len(numbers) == 10:
     validate_isbn10(numbers)
   else:
-    return "sorry not a number"
+    return print("Sorry, this is not a valid isbn")
